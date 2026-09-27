@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # Python
-Backend/.env
+backend/.env
 
 # Distribution / packaging
 .Python
@@ -202,24 +202,26 @@ cython_debug/
 #   that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
 #   and can be added to the global gitignore or merged into this file. However, if you prefer, 
 #   you could uncomment the following to ignore the entire vscode folder
-Frontend/.vscode/
-Frontend/node_modules/
-Frontend/.env*
-!Frontend/.env.example
-!Frontend/.env.template
+# 兜底规则：不论哪个目录下的 node_modules 和 .vscode 都忽略
+# Why：路径前缀规则一旦目录名变了就失效，这两条永远不会失效
+node_modules/
+.vscode/
+frontend/.env*
+!frontend/.env.example
+!frontend/.env.template
 # Vue 3 / Vite
 # SSR 构建输出
-Frontend/dist-ssr/
+frontend/dist-ssr/
 # Vite 本地环境文件(.env.local, .env.development.local 等)
 frontend/*.local
 # Vite 缓存目录（偶尔出现）
-Frontend/.vite/
+frontend/.vite/
 # Playwright 等 E2E 测试结果
-Frontend/test-results/
+frontend/test-results/
 
 # 如果你用 Cypress 做测试
-Frontend/cypress/videos/
-Frontend/cypress/screenshots/
+frontend/cypress/videos/
+frontend/cypress/screenshots/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
 
