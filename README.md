@@ -3,7 +3,7 @@ First practice project by HTML,CSS and Vue3,FastAPI.
 
 ## 阶段一
 ### Task1 
-- 项目初始化 + Git骨架。 
+- 项目初始化 + Git骨架。  
   目标：
   建立一个本地 Git 仓库，关联到 GitHub 远程仓库，把基线文件提交到 main，再切出 feat-vanilla-js 作为阶段一工作分支。本任务不写任何 HTML/CSS，纯 Git 骨架。
 
