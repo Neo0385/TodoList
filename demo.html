@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>纯 CSS 侧边栏切换内容</title>
+
+  <style>
+    /*
+      1. 隐藏三个 radio 单选按钮。
+      radio 的作用：同一组 name="tab" 的 radio，只能选中一个。
+      我们不用它显示，只用它记录“当前选中的是哪个子项”。
+    */
+    input[name="tab"] {
+      position: absolute;   /* 脱离正常排版，不占位置 */
+      opacity: 0;           /* 完全透明，看不见 */
+      pointer-events: none; /* 鼠标不能直接点它，但点击 label 仍然能选中它 */
+    }
+
+    /*
+      2. 整个页面左右布局。
+      .app 里面左边是 .sidebar，右边是 .content。
+    */
+    .app {
+      display: flex;        /* 让子元素左右排列 */
+      gap: 20px;            /* 左右之间留 20px 间距 */
+      padding: 20px;
+    }
+
+    /*
+      3. 左侧导航栏。
+    */
+    .sidebar {
+      width: 220px;
+      border-right: 1px solid #ddd;
+    }
+
+    /*
+      details 是 HTML5 原生折叠元素。
+      summary 是它的标题。
+      点击 summary，就会展开或收起 details 里面的内容。
+    */
+    .sidebar summary {
+      cursor: pointer;      /* 鼠标放上去变成小手，表示可以点 */
+      padding: 8px 0;
+      font-weight: bold;
+    }
+
+    /*
+      子项列表去掉默认的小圆点。
+    */
+    .sidebar ul {
+      list-style: none;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    /*
+      子项文字。
+      点击 label，等于点击它关联的 radio。
+    */
+    .sidebar label {
+      display: block;
+      padding: 6px 0;
+      cursor: pointer;
+      color: #0366d6;
+    }
+
+    .sidebar label:hover {
+      text-decoration: underline;
+    }
+
+    /*
+      4. 右侧内容区。
+    */
+    .content {
+      flex: 1;              /* 占满剩余宽度 */
+    }
+
+    /*
+      5. 默认隐藏所有右侧面板。
+    */
+    .panel {
+      display: none;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    /*
+      6. 关键代码：
+      哪个 radio 被选中，就显示对应的右侧面板。
+
+      #tab1:checked 表示：
+      id 为 tab1 的 radio 被选中了。
+
+      ~ 是“后面的兄弟元素”选择器。
+      所以 .app 必须写在 radio 后面，并且和 radio 是兄弟关系。
+
+      .panel1 是 .app 里面的元素。
+    */
+    #tab1:checked ~ .app .panel1 { display: block; }
+    #tab2:checked ~ .app .panel2 { display: block; }
+    #tab3:checked ~ .app .panel3 { display: block; }
+  </style>
+</head>
+
+<body>
+
+  <!--
+    这三个 radio 是“状态开关”，本身不显示。
+    name="tab" 表示它们是一组，只能选一个。
+    id 分别对应下面 label 的 for。
+    checked 表示默认选中第一个。
+  -->
+  <input type="radio" name="tab" id="tab1" checked>
+  <input type="radio" name="tab" id="tab2">
+  <input type="radio" name="tab" id="tab3">
+
+  <!-- 整个左右布局 -->
+  <div class="app">
+
+    <!-- 左侧导航栏 -->
+    <nav class="sidebar">
+
+      <!--
+        details 默认展开：open。
+        点击 summary 可以折叠或展开。
+      -->
+      <details open>
+        <summary>项目一</summary>
+        <ul>
+          <!--
+            label 的 for="tab1" 和上面的 radio id="tab1" 绑定。
+            点击这个 label，就等于选中 id="tab1" 的 radio。
+          -->
+          <li><label for="tab1">子项 1</label></li>
+          <li><label for="tab2">子项 2</label></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>项目二</summary>
+        <ul>
+          <li><label for="tab3">子项 3</label></li>
+        </ul>
+      </details>
+
+    </nav>
+
+    <!-- 右侧内容区 -->
+    <main class="content">
+
+      <!-- 每个面板对应一个子项 -->
+      <section class="panel panel1">
+        <h2>子项 1 的数据细节</h2>
+        <p>这里显示子项 1 的内容。</p>
+      </section>
+
+      <section class="panel panel2">
+        <h2>子项 2 的数据细节</h2>
+        <p>这里显示子项 2 的内容。</p>
+      </section>
+
+      <section class="panel panel3">
+        <h2>子项 3 的数据细节</h2>
+        <p>这里显示子项 3 的内容。</p>
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

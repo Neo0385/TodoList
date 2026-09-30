@@ -1,0 +1,61 @@
+/*======定义全局变量======*/
+:root{
+    /*主色: 按钮，链接，强调元素*/
+    --color-primary: #3b82f6;  
+    /* 主色悬停态:鼠标移上去时用，比主色深一档 */
+    --color-primary-hover: #2563eb;     
+    /* 页面背景色: 整个页面的底色。*/
+    --color-bg: #f3f4f6;        
+    /* 表面色：卡片，header,aside,等浮在背景上的区域 */
+    --color-surface: #fff;      
+    /*主要字色*/
+    --color-text: #1f2937;     
+    /* 次要文字色：副标题，说明文字，已完成任务文字颜色 */
+    --color-text-muted: #6b7280;     
+    /* 边框色：分割线，输入框边框 */
+    --color-border: #e5e7eb;    
+
+    /* 超小间距:元素内部的紧凑间隙 */
+    --space-xs: 4px;
+
+    /* 小间距:按钮之间、标签与输入框之间 */
+    --space-sm: 8px;
+
+    /* 中等间距:常规区块的内边距 */
+    --space-md: 16px;
+
+    /* 大间距:区块之间的分隔 */
+    --space-lg: 24px;
+
+    /* ------尺寸体系------ */
+    /* 侧边栏固定宽度 */
+    /* why用变量而不是写死240px:将来想改宽度只改这一处 */
+    --aside-width: 180px;
+
+    /* ======圆角与阴影====== */
+    /* 小圆角:按钮 输入框 */
+    --radius-sm: 4px;
+
+    /* 中圆角:卡片 容器 */
+    --radius-md: 8px;
+
+    /* 轻阴影: 卡片浮起效果 */
+    --shadow-sm:0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* ======全局reset====== */
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ====== */
+body{
+    background-color: #f5f6f8;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card{
+    border-radius: var();
+}
