@@ -13,7 +13,7 @@ todo-fullstack/
 ├── .gitignore  
 └── README.md
   
-Git 分支演进架构： main (主分支) ─────────────────────────────────────────► 最终合并全栈生产版  
+Git 分支演进架构： main (主分支) ───────────────────────────────────► 最终合并全栈生产版  
 │  
 ├─► feat-vanilla-js(阶段一/二: HTML5 + CSS3 + 原生 DOM + LocalStorage + Mock API)  
 │    
@@ -33,7 +33,7 @@ todo-fullstack/
 ├── .gitignore  
 └── README.md
   
-Git 分支演进架构： main (主分支) ─────────────────────────────────────────► 最终合并全栈生产版  
+Git 分支演进架构： main (主分支) ───────────────────────────────────► 最终合并全栈生产版  
 │  
 ├─► feat-vanilla-js(阶段一/二: HTML5 + CSS3 + 原生 DOM + LocalStorage + Mock API)  
 │    
