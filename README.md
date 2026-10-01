@@ -2,8 +2,8 @@
 First practice project by HTML,CSS and Vue3,FastAPI.
 ---  
 组件库（手写 CSS 夯实基础），逐阶段引入新技术。
-
-目录组织（Monorepo 单仓结构）： 
+  
+  目录组织（Monorepo 单仓结构）：   
 todo-fullstack/   
 ├── frontend/ # 前端代码（阶段一至四）   
 ├── backend/ # 后端代码（阶段五至六创建）   
