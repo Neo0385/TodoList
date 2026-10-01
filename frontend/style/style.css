@@ -59,3 +59,13 @@ body{
 .card{
     border-radius: var();
 }
+img{
+    max-width: 100%;
+    display: block;
+}
+input,
+button,
+textarea,
+select{
+    font: inherit;
+}
